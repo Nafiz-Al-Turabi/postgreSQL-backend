@@ -30,7 +30,7 @@ const loginUser = async (req, res) => {
       if (!isMatch) {
         return res.status(400).json({ message: "Invalid Credentials" });
       } else {
-        generateToken(res, user.id);
+        generateToken(res, user.id, user.email, user.name);
         res.status(200).json({ message: "Login Successful" });
       }
     }
